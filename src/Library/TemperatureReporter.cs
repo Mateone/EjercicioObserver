@@ -2,13 +2,13 @@ using System;
 
 namespace Observer
 {
-    public class TemperatureReporter
+    public class TemperatureReporter : IObserver
     {
         private bool first;
         private Temperature last;
-        private TemperatureSensor provider;
+        private IObservable provider;
 
-        public void StartReporting(TemperatureSensor provider)
+        public void StartReporting(IObservable provider)
         {
             this.provider = provider;
             this.first = true;
